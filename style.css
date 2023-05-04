@@ -1,26 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pathway+Extreme:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 
 * {
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: #000;
+    --secondary-color: #fff;
+}
+
+html {
+    transition: all 0.5s ease-in-out;
+}
+
+html.dark {
+    --primary-color: #fff;
+    --secondary-color: #333;
+}
+
+html.dark {
+    background-color: #111;
+    color: var(--primary-color);
+}
+
 body {
-    /* font-family: 'Vina Sans', cursive; */
-    /* font-family: 'Rubik', sans-serif; */
-    /* font-family: 'Pathway Extreme', sans-serif; */
-    /* font-family: 'Bungee', cursive; */
-    font-family: 'Rubik Mono One', sans-serif;
+    font-family: 'Pathway Extreme', sans-serif;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     margin: 0;
     height: 100vh;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+button {
+    border: none;
+}
+
+button:focus {
+    border: none;
+    outline: none;
+}
+
+button:focus {
+    outline: none !important;
 }
 
 .switch {
@@ -131,4 +166,98 @@ body {
 
 .input:checked+.slider:before {
     transform: translateX(30px);
+}
+
+.toggle {
+    position: absolute;
+    top: 100px;
+}
+
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.clock {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.needle {
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 60px;
+    width: 3px;
+    transform-origin: bottom center;
+}
+
+.needle.hour {
+    transform: translate(-50%, -100%) rotate(30deg);
+}
+
+.needle.minute {
+    transform: translate(-50%, -100%) rotate(40deg);
+    height: 100px;
+}
+
+.needle.second {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 100px;
+    background-color: red;
+}
+
+.center-point {
+    background-color: red;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.center-point::after {
+    content: "";
+    background-color: var(--primary-color);
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.time {
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.date {
+    color: #808080;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.date .circle {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 50%;
+    height: 1.5rem;
+    width: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1rem;
+    transition: all 0.5s ease-in-out;
+    font-size: 0.9rem;
+    font-weight: 200;
 }
