@@ -193,13 +193,13 @@ button:focus {
     position: absolute;
     top: 50%;
     left: 50%;
-    height: 60px;
     width: 3px;
     transform-origin: bottom center;
 }
 
 .needle.hour {
     transform: translate(-50%, -100%) rotate(30deg);
+    height: 60px;
 }
 
 .needle.minute {
@@ -211,6 +211,7 @@ button:focus {
     transform: translate(-50%, -100%) rotate(0deg);
     height: 100px;
     background-color: red;
+    width: 2px;
 }
 
 .center-point {
