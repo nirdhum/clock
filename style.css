@@ -47,6 +47,7 @@ input[type="reset"] {
 
 button {
     border: none;
+
 }
 
 button:focus {
@@ -171,6 +172,7 @@ button:focus {
 .toggle {
     position: absolute;
     top: 100px;
+    cursor: pointer;
 }
 
 .clock-container {
