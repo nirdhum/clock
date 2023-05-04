@@ -261,5 +261,5 @@ button:focus {
     line-height: 1rem;
     transition: all 0.5s ease-in-out;
     font-size: 0.9rem;
-    font-weight: 200;
+    font-weight: 400;
 }
