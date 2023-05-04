@@ -189,6 +189,7 @@ button:focus {
     position: relative;
     width: 200px;
     height: 200px;
+    margin-bottom: 1rem;
 }
 
 .needle {
@@ -198,7 +199,7 @@ button:focus {
     left: 50%;
     width: 3px;
     transform-origin: bottom center;
-    transition: all 0.05s ease-in-out;
+    /* transition: all 0.02s ease-in-out; This causes clock hands to loop around*/
 }
 
 .needle.hour {
@@ -272,53 +273,27 @@ button:focus {
     margin-left: 2px;
 }
 
-@media only screen and (max-width: 375px) {
-    .time {
-        font-size: 2.5rem;
-    }
+@media only screen and (max-width: 1024px) {
+
 
     .date {
-        font-size: 1rem;
-    }
-
-    .date .circle {
-        height: 1.3rem;
-        width: 1.3rem;
-        line-height: 1rem;
-        font-size: 1rem;
+        margin-bottom: 5rem;
     }
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 540px) {
     .time {
-        font-size: 2.3rem;
+        font-size: 3rem;
     }
 
     .date {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     .date .circle {
-        height: 1.2rem;
-        width: 1.2rem;
-        line-height: 1rem;
-        font-size: 1rem;
-    }
-}
-
-@media only screen and (max-width: 280px) {
-    .time {
-        font-size: 1.8rem;
-    }
-
-    .date {
-        font-size: 0.8rem;
-    }
-
-    .date .circle {
-        height: 1rem;
-        width: 1rem;
-        line-height: 0.8rem;
-        font-size: 0.8rem;
+        height: 1.8rem;
+        width: 1.8rem;
+        line-height: 1.2rem;
+        font-size: 1.2rem;
     }
 }
