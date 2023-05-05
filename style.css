@@ -297,3 +297,90 @@ button:focus {
         font-size: 1.2rem;
     }
 }
+
+@media only screen and (max-width: 414px) {
+    .time {
+        font-size: 2.8rem;
+    }
+
+    .date {
+        font-size: 1.4rem;
+    }
+
+    .date .circle {
+        height: 2rem;
+        width: 2rem;
+        line-height: 1.4rem;
+        font-size: 1.4rem;
+    }
+}
+
+@media only screen and (max-width: 393px) {
+    .time {
+        font-size: 2.5rem;
+    }
+
+    .date {
+        font-size: 1.2rem;
+    }
+
+    .date .circle {
+        height: 1.8rem;
+        width: 1.8rem;
+        line-height: 1.2rem;
+        font-size: 1.2rem;
+    }
+
+}
+
+@media only screen and (max-width: 375px) {
+    .time {
+        font-size: 2.5rem;
+    }
+
+    .date {
+        font-size: 1rem;
+    }
+
+    .date .circle {
+        height: 1.3rem;
+        width: 1.3rem;
+        line-height: 1rem;
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+
+    .time {
+        font-size: 2.3rem;
+    }
+
+    .date {
+        font-size: 1rem;
+    }
+
+    .date .circle {
+        height: 1.2rem;
+        width: 1.2rem;
+        line-height: 1rem;
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .time {
+        font-size: 1.6rem;
+    }
+
+    .date {
+        font-size: 1rem;
+    }
+
+    .date .circle {
+        height: 1.2rem;
+        width: 1.2rem;
+        line-height: 1rem;
+        font-size: .8rem;
+    }
+}
