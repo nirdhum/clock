@@ -21,7 +21,7 @@ switchElement.addEventListener('change', function (e) {
 function setTime() {
     const time = new Date()
     const hours = time.getHours()
-    const clockHours = hours % 12
+    const clockHours = (hours > 12) ? (hours % 12) : hours
     const minutes = time.getMinutes()
     const seconds = time.getSeconds()
     const date = time.getDate()
@@ -29,7 +29,7 @@ function setTime() {
     const day = time.getDay()
     const ampm = hours >= 12 ? 'PM' : 'AM'
 
-    hourElement.style.transform = `translate(-50%, -100%) rotate(${scale(clockHours, 0, 11, 0, 360)}deg)`
+    hourElement.style.transform = `translate(-50%, -100%) rotate(${scale(hours, 1, 12, 0, 360)}deg)`
     minuteElement.style.transform = `translate(-50%, -100%) rotate(${scale(minutes, 0, 59, 0, 360)}deg)`
     secondElement.style.transform = `translate(-50%, -100%) rotate(${scale(seconds, 0, 59, 0, 360)}deg)`
 
