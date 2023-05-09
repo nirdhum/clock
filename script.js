@@ -29,7 +29,7 @@ function setTime() {
     const day = time.getDay()
     const ampm = hours >= 12 ? 'PM' : 'AM'
 
-    hourElement.style.transform = `translate(-50%, -100%) rotate(${scale(hours, 1, 12, 0, 360)}deg)`
+    hourElement.style.transform = `translate(-50%, -100%) rotate(${scale(hours, 0, 12, 0, 360)}deg)`
     minuteElement.style.transform = `translate(-50%, -100%) rotate(${scale(minutes, 0, 59, 0, 360)}deg)`
     secondElement.style.transform = `translate(-50%, -100%) rotate(${scale(seconds, 0, 59, 0, 360)}deg)`
 
@@ -43,6 +43,6 @@ function scale(number, inMin, inMax, outMin, outMax) {
     return (number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
 }
 
-setTime()
-
 setInterval(setTime, 1000);
+
+setTime()
