@@ -24,29 +24,30 @@ A simple, responsive analog clock built using **HTML**, **CSS**, and **JavaScrip
 ## 📁 Project Structure
 
 ```bash
-analog-clock/
+clock/
+├── clock.png         # Favicon
 ├── index.html        # Main HTML file
-├── style.css         # Clock styling
+├── README.md         # Project documentation
 ├── script.js         # Clock functionality
-└── README.md         # Project documentation
+└── style.css         # Clock styling
 ```
 
-# Clone the repo
+## Clone the repo
 
 git clone https://github.com/nirdhum/clock.git
 
-# Open index.html in your browser
+## Open index.html in your browser
 
-# 🙌 Contributing
+## 🙌 Contributing
 
 Contributions, issues, and feature requests are welcome!
 Feel free to open a pull request or submit an issue.
 
-# 📄 License
+## 📄 License
 
 This project is licensed under the MIT License.
 Feel free to use and modify it for personal or commercial projects.
 
-# 👨‍💻 Author
+## 👨‍💻 Author
 
 Nirdhum
