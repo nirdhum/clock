@@ -1,0 +1,451 @@
+@import url('https://fonts.googleapis.com/css2?family=Pathway+Extreme:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #141414;
+    --secondary-color: #eeeeee;
+    --tertiary-color: #2e2e2e;
+    --color-center-second: #f52323;
+}
+
+html {
+    transition: all 0.5s ease-in-out;
+}
+
+html.dark {
+    --primary-color: #eeeeee;
+    --secondary-color: #333;
+    --tertiary-color: #dadada;
+}
+
+html.dark {
+    background-color: #111;
+    color: var(--primary-color);
+}
+
+body {
+    font-family: 'Pathway Extreme', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0;
+    height: 100vh;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+button {
+    border: none;
+
+}
+
+button:focus {
+    border: none;
+    outline: none;
+}
+
+button:focus {
+    outline: none !important;
+}
+
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 64px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* .switch:focus {
+    border: none;
+    outline: none;
+    outline: none !important;
+} */
+
+/* .toggle:focus {
+    outline: none !important;
+} */
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #73C0FC;
+    transition: .4s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    left: 2px;
+    bottom: 2px;
+    z-index: 2;
+    background-color: #e8e8e8;
+    transition: .4s;
+}
+
+.sun svg {
+    position: absolute;
+    top: 6px;
+    left: 36px;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+}
+
+.moon svg {
+    fill: #73C0FC;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+}
+
+/* .switch:hover */
+.sun svg {
+    animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* .switch:hover */
+.moon svg {
+    animation: tilt 5s linear infinite;
+}
+
+@keyframes tilt {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    75% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.input:checked+.slider {
+    background-color: #183153;
+}
+
+.input:focus+.slider {
+    box-shadow: 0 0 1px #183153;
+}
+
+.input:checked+.slider:before {
+    transform: translateX(30px);
+}
+
+.toggle {
+    position: absolute;
+    bottom: 100px;
+    cursor: pointer;
+}
+
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.clock {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 1rem;
+}
+
+.needle {
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3px;
+    transform-origin: bottom center;
+    /* transition: all 0.02s ease-in-out; This causes clock hands to loop around*/
+}
+
+.needle.hour {
+    transform: translate(-50%, -100%) rotate(30deg);
+    height: 60px;
+}
+
+.needle.minute {
+    transform: translate(-50%, -100%) rotate(40deg);
+    height: 100px;
+}
+
+.needle.second {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 100px;
+    background-color: var(--color-center-second);
+    width: 2px;
+}
+
+.center-point {
+    background-color: var(--color-center-second);
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.center-point::after {
+    content: "";
+    background-color: var(--primary-color);
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.time {
+    font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+.date {
+    color: var(--tertiary-color);
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.date .circle {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.3rem;
+    transition: all 0.5s ease-in-out;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-left: 2px;
+}
+
+@media only screen and (max-width: 1024px) {
+
+
+    .date {
+        margin-bottom: 5rem;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .time {
+        font-size: 3rem;
+    }
+
+    .date {
+        font-size: 1.2rem;
+    }
+
+    .date .circle {
+        height: 2rem;
+        width: 2rem;
+        line-height: 1.2rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .time {
+        font-size: 2.8rem;
+    }
+
+    .date {
+        font-size: 1.4rem;
+    }
+
+    .date .circle {
+        height: 2.2rem;
+        width: 2.2rem;
+        line-height: 1.4rem;
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (max-width: 393px) {
+    .time {
+        font-size: 2.5rem;
+    }
+
+    .date {
+        font-size: 1.2rem;
+    }
+
+    .date .circle {
+        height: 2rem;
+        width: 2rem;
+        line-height: 1.2rem;
+        font-size: 1.1rem;
+    }
+
+}
+
+@media only screen and (max-width: 375px) {
+    .time {
+        font-size: 2.5rem;
+    }
+
+    .date {
+        font-size: 1rem;
+    }
+
+    .date .circle {
+        height: 1.6rem;
+        width: 1.6rem;
+        line-height: 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+
+    .time {
+        font-size: 2.3rem;
+    }
+
+    .date {
+        font-size: 1rem;
+    }
+
+    .date .circle {
+        height: 1.7rem;
+        width: 1.7rem;
+        line-height: 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .time {
+        font-size: 1.6rem;
+    }
+
+    .date {
+        font-size: 1rem;
+    }
+
+    .date .circle {
+        height: 1.2rem;
+        width: 1.2rem;
+        line-height: 1rem;
+        font-size: .8rem;
+    }
+}
+
+@media only screen and (max-width: 280px) {
+    .time {
+        font-size: 1.5rem;
+    }
+
+    .date {
+        font-size: 1rem;
+    }
+
+    .date .circle {
+        height: 1.4rem;
+        width: 1.4rem;
+        line-height: 1rem;
+        font-size: .7rem;
+    }
+}
+
+@media only screen and (max-width: 240px) {
+    .time {
+        font-size: 1rem;
+    }
+
+    .date {
+        font-size: 0.6rem;
+    }
+
+    .date .circle {
+        height: 1.2rem;
+        width: 1.2rem;
+        line-height: 1rem;
+        font-size: .6rem;
+    }
+
+    .toggle {
+        bottom: 20px;
+    }
+
+    .clock {
+        width: 150px;
+        height: 150px;
+    }
+
+    .needle.hour {
+        height: 40px;
+    }
+
+    .needle.minute {
+        height: 60px;
+    }
+
+    .needle.second {
+        height: 60px;
+    }
+}
