@@ -13,8 +13,7 @@ A simple, responsive analog clock built using **HTML**, **CSS**, and **JavaScrip
 
 ## 🚀 Live Demo
 
-[🔗 View it live](https://nirdhum.github.io/clock/)  
-_(Replace with your actual GitHub Pages link if hosted)_
+[🔗 View it live](https://nirdhum.github.io/clock/)
 
 ## 🛠️ Technologies Used
 
