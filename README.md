@@ -34,9 +34,8 @@ clock/
 
 ## Clone the repo
 
-git clone https://github.com/nirdhum/clock.git
-
-## Open index.html in your browser
+- git clone https://github.com/nirdhum/clock.git
+- Open index.html in your browser
 
 ## 🙌 Contributing
 
